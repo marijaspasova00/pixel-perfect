@@ -144,9 +144,9 @@ export function QuickCreate({ open, onClose }: { open: boolean; onClose: () => v
             <>
               <Field label="Opportunity name" required value={form["name"] ?? ""} onChange={(v) => set("name", v)} />
               <Field label="Value (EUR)" type="number" value={form["value"] ?? ""} onChange={(v) => set("value", v)} />
-              <div className="field">
+              <div>
                 <span className="lbl">Stage</span>
-                <select value={form["stage"] ?? "Qualification"} onChange={(e) => set("stage", e.target.value)}>
+                <select className="field" value={form["stage"] ?? "Qualification"} onChange={(e) => set("stage", e.target.value)}>
                   {["Qualification", "Discovery", "Proposal", "Negotiation", "Closing"].map((s) => (
                     <option key={s}>{s}</option>
                   ))}
@@ -164,9 +164,9 @@ export function QuickCreate({ open, onClose }: { open: boolean; onClose: () => v
             <>
               <Field label="Task" required value={form["title"] ?? ""} onChange={(v) => set("title", v)} />
               <Field label="Due date" type="date" value={form["due_date"] ?? ""} onChange={(v) => set("due_date", v)} />
-              <div className="field">
+              <div>
                 <span className="lbl">Priority</span>
-                <select value={form["priority"] ?? "Medium"} onChange={(e) => set("priority", e.target.value)}>
+                <select className="field" value={form["priority"] ?? "Medium"} onChange={(e) => set("priority", e.target.value)}>
                   {["High", "Medium", "Low"].map((s) => (
                     <option key={s}>{s}</option>
                   ))}
@@ -203,9 +203,9 @@ function Field({
   required?: boolean;
 }) {
   return (
-    <label className="field">
+    <label className="block">
       <span className="lbl">{label}</span>
-      <input type={type} value={value} required={required} onChange={(e) => onChange(e.target.value)} />
+      <input className="field" type={type} value={value} required={required} onChange={(e) => onChange(e.target.value)} />
     </label>
   );
 }
@@ -220,9 +220,9 @@ function CompanyPicker({
   options: { id: string; name: string }[];
 }) {
   return (
-    <label className="field">
+    <label className="block">
       <span className="lbl">Company</span>
-      <select value={value} onChange={(e) => onChange(e.target.value)}>
+      <select className="field" value={value} onChange={(e) => onChange(e.target.value)}>
         <option value="">Unassigned</option>
         {options.map((o) => (
           <option key={o.id} value={o.id}>
