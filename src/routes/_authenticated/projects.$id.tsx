@@ -109,7 +109,7 @@ function ProjectProfile() {
             <span className="mono text-ink-3">{p.code ?? "—"}</span>
             <span className="sep" />
             {p.company_id ? (
-              <Link to="/companies/$id" params={{ id: p.company_id }} className="text-accent-ink">
+              <Link to="/companies" className="text-accent-ink">
                 {company.data?.name ?? "Company"}
               </Link>
             ) : (
@@ -233,7 +233,7 @@ function ProjectProfile() {
                 <div className="flex items-center gap-2.5">
                   <Avatar name={company.data.name} size="lg" />
                   <div>
-                    <Link to="/companies/$id" params={{ id: company.data.id }} className="nm">
+                    <Link to="/companies" className="nm">
                       {company.data.name}
                     </Link>
                     <p className="text-[11.5px] text-ink-3">
