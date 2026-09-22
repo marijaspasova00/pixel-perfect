@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, type LinkProps } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import {
   Building2,
@@ -24,7 +24,12 @@ import {
   projectsQuery,
 } from "@/lib/queries";
 
-type Item = { to: string; label: string; icon: ComponentType<{ className?: string }>; count?: number };
+type Item = {
+  to: LinkProps["to"];
+  label: string;
+  icon: ComponentType<{ className?: string }>;
+  count?: number | undefined;
+};
 
 export function Sidebar() {
   const companies = useQuery(companiesQuery());
