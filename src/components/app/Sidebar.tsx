@@ -25,7 +25,7 @@ import {
 } from "@/lib/queries";
 
 type Item = {
-  to: LinkProps["to"];
+  to: NonNullable<LinkProps["to"]>;
   label: string;
   icon: ComponentType<{ className?: string }>;
   count?: number | undefined;
