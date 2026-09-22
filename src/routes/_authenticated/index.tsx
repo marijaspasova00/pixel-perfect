@@ -245,7 +245,7 @@ function Dashboard() {
                     <b className="font-medium">{a.subject}</b>
                   </p>
                   <p className="text-[11.5px] text-ink-3">
-                    {a.type} · {companyName(a.company_id)} · {relativeDate(a.occurred_at)}
+                    {a.activity_type} · {companyName(a.company_id)} · {relativeDate(a.occurred_at)}
                   </p>
                 </div>
               </li>
