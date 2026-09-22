@@ -1,20 +1,16 @@
 # Semos CRM — roadmap
 
 ## Done
-- Lovable Cloud enabled; CRM schema + demo data migrations applied
-- Design system in src/styles.css (light + dark tokens, component classes)
-- Auth: email/password + Google; /auth page; _authenticated shell gate
+- Lovable Cloud backend: CRM schema (companies, contacts, opportunities, projects, consultants,
+  skills, candidates, contracts, activities, tasks, audit log, profiles, roles) + demo data
+- Sign-in: email/password and Google, /auth page, protected app shell
+- Design system in src/styles.css (light + dark), CONVENTIONS.md
 - App shell: sidebar nav, top bar, global search (⌘K), quick create, dark mode toggle
-- Dashboard at /
-- Shared helpers: Bits.tsx, Avatar.tsx, queries.ts, format.ts, useAuth, useTheme
-- CONVENTIONS.md for consistent page building
+- Pages: Dashboard, My Workspace, Management, Companies + Company profile, Contacts, Client Health,
+  Opportunities + Opportunity detail, Pipeline, Projects + Project profile, Recruitment,
+  Skills & Availability, Contracts, Roles & Audit Log
+- All routes verified rendering signed in, no console errors, typecheck clean
 
-## In progress (parallel)
-- Clients: /companies, /companies/$id, /contacts
-- Sales: /opportunities, /opportunities/$id, /pipeline, /client-health
-- Delivery: /projects, /projects/$id, /contracts
-- People & admin: /workspace, /recruitment, /skills, /management, /admin
-
-## Remaining
-- Verify every route renders signed-in (Playwright) and fix typecheck errors
-- Per-route head metadata check
+## Possible next steps
+- Per-record edit forms beyond the current inline editors
+- Email/notification workflows for renewals and at-risk accounts
