@@ -109,7 +109,7 @@ function RecruitmentPage() {
       <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
         <StatCard label="Candidates" value={list.length} />
         <StatCard label="In interview" value={inInterview} />
-        <StatCard label="Offers out" value={offersOut} tone={offersOut > 0 ? "warn" : undefined} />
+        <StatCard label="Offers out" value={offersOut} {...(offersOut > 0 ? { tone: "warn" as const } : {})} />
         <StatCard label="Average rating" value={avgRating.toFixed(1)} />
       </div>
 
